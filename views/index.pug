@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}!
+  form(method='get' action='/convert')
+    ul.key-value-list
+      li
+        div.li-key
+          label(for='url') URL
+        div.li-value
+          input#url.form-control(type='text' name='url')
+      li
+        div.li-key
+            span Page Size
+        div.li-value.radio-value
+            label(for='letter') Letter (8.5in by 11in)
+            input#letter(type='radio' name='format' value='letter' checked='checked')
+            label(for='a4') A4 (210mm by 297mm)
+            input#a4(type='radio' name='format' value='a4')
+      li
+        div.li-key
+          span Orientation
+        div.li-value.radio-value
+          label(for='portrait') Portrait
+          input#portrait(type='radio' name='orientation' value='portrait' checked='checked')
+          label(for='landscape') Landscape
+          input#landscape(type='radio' name='orientation' value='landscape')
+      li
+        div.li-key
+            span Margins
+        div.li-value
+            input#top(type='number' name='top' placeholder='top' value='1' min='0' max='1000' step='0.01')
+            input#right(type='number' name='right' placeholder='right' value='1' min='0' max='1000' step='0.01')
+            input#bottom(type='number' name='bottom' placeholder='bottom' value='1' min='0' max='1000' step='0.01')
+            input#left(type='number' name='left' placeholder='left' value='1' min='0' max='1000' step='0.01')
+            select#units(name='units')
+                option(value='in' selected='selected') Inches
+                option(value='mm') Millimeters
+      li
+        div.li-key
+            label(for='scale') Scale
+        div.li-value
+            input#scale(type='number' name='scale' value='1' min='0' max='1' step='0.01')
+    button.btn(type='submit') Convert

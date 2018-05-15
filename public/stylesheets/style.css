@@ -1,0 +1,52 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*Key-Value List*/
+.key-value-list {
+  display: table;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+.key-value-list > li {
+  list-style-type: none;
+  display: table-row;
+}
+.li-key,
+.li-value {
+  display: table-cell;
+  padding: 4px;
+}
+.li-key {
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.required-field:before {
+  color: red;
+  content: "*";
+}
+.li-key > label:after,
+.li-key > span:after {
+  content: ":";
+}
+.key-value-list .li-key {
+  font-weight: bold;
+}
+.li-value input {
+  margin-right: 1em;
+}
+#top, #right, #bottom, #left, #scale {
+  width: 4em;
+}
+.radio-value label, .radio.value input {
+  vertical-align: top;
+}
+.radio-value input {
+  margin-right: 2em;
+}
