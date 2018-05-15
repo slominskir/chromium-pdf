@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}!
-  form(method='get' action='/convert')
+  form(method='get' action='/print')
     ul.key-value-list
       li
         div.li-key
@@ -42,4 +42,4 @@ block content
             label(for='scale') Scale
         div.li-value
             input#scale(type='number' name='scale' value='1' min='0' max='1' step='0.01')
-    button.btn(type='submit') Convert
+    button.btn(type='submit') Print

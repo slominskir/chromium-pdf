@@ -1,18 +1,27 @@
 {
   "name": "chromium-pdf",
-  "version": "0.0.0",
+  "description": "Print-to-PDF web service",
+  "homepage": "https://github.com/slominskir/chromium-pdf",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slominskir/chromium-pdf/chromium-pdf.git"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "config": {
+    "port": "3000"
+  },
   "dependencies": {
+    "express": "~4.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "puppeteer": "1.4.0"
   },
-  "bundledDependencies": ["express", "puppeteer"]
+  "bundledDependencies": ["express", "cookie-parser", "debug", "http-errors", "morgan", "pug", "puppeteer"]
 }
