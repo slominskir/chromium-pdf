@@ -1,11 +1,11 @@
 {
-  "name": "chromium-pdf",
+  "name": "puppet-show",
   "description": "Print-to-PDF web service",
-  "homepage": "https://github.com/slominskir/chromium-pdf",
+  "homepage": "https://github.com/slominskir/puppet-show",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/slominskir/chromium-pdf/chromium-pdf.git"
+    "url": "https://github.com/slominskir/puppet-show/puppet-show.git"
   },
   "private": true,
   "scripts": {
@@ -22,6 +22,5 @@
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "puppeteer": "1.4.0"
-  },
-  "bundledDependencies": ["express", "cookie-parser", "debug", "http-errors", "morgan", "pug", "puppeteer"]
+  }
 }
