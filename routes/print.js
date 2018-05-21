@@ -2,7 +2,6 @@ var puppeteer = require('puppeteer'),
 express = require('express'),
 router = express.Router();
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
     (async() => {
         var url = req.query.url,

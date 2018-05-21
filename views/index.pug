@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}!
-  form(method='get' action='/print')
+  form#parameters-form(method='get' action='/print')
     ul.key-value-list
       li
         div.li-key
@@ -43,3 +43,4 @@ block content
         div.li-value
             input#scale(type='number' name='scale' value='1' min='0' max='1' step='0.01')
     button.btn(type='submit') Print
+    div#preview-div
