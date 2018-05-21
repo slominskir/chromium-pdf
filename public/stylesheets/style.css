@@ -50,3 +50,14 @@ a {
 .radio-value input {
   margin-right: 2em;
 }
+#parameters-form {
+  display: inline-block;
+}
+#print-button {
+  float: right;
+}
+#preview-div {
+  border: 1px solid black;
+  margin: 1em;
+  padding: 1em;
+}

@@ -2,8 +2,8 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}!
-  form#parameters-form(method='get' action='/print')
+  h2 Print-to-PDF
+  form#parameters-form(method='get' action='/puppet-show/print')
     ul.key-value-list
       li
         div.li-key
@@ -12,12 +12,12 @@ block content
           input#url.form-control(type='text' name='url')
       li
         div.li-key
-            span Page Size
+            label(for='format') Page Format
         div.li-value.radio-value
-            label(for='letter') Letter (8.5in by 11in)
-            input#letter(type='radio' name='format' value='letter' checked='checked')
-            label(for='a4') A4 (210mm by 297mm)
-            input#a4(type='radio' name='format' value='a4')
+            select#format(name='format')
+                option(value='letter' selected='selected') Letter (8.5in by 11in)
+                option(value='a4') A4 (210mm by 297mm)
+                option(value='legal') Legal (8.5in by 14in)
       li
         div.li-key
           span Orientation
@@ -42,5 +42,6 @@ block content
             label(for='scale') Scale
         div.li-value
             input#scale(type='number' name='scale' value='1' min='0' max='1' step='0.01')
-    button.btn(type='submit') Print
-    div#preview-div
+    button#print-button.btn(type='submit') Print
+  h3 Request Preview
+  div#preview-div
