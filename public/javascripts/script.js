@@ -6,4 +6,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var str = $(formElement).serialize();
         previewElement.innerHTML=location.origin.concat('/puppet-show/print?').concat(str);
     });
+
+    formElement.dispatchEvent(new Event('change'));
 });
