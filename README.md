@@ -5,6 +5,17 @@ Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to 
 
 Use this web service to programatically convert web pages to PDF.  For example, create a cron job that emails a daily PDF report generated on a web page.  The HTML form allows you to easily build your request for embedding in another application.
 
+## Install
+```bash
+npm i puppet-show
+```
+**Note**: This application runs on the Node.js JavaScript runtime.  Download it [here](https://nodejs.org/en/download/).
+
+## Run
+```bash
+npm start
+```
+
 ## See Also
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
    
