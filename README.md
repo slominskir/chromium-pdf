@@ -3,7 +3,7 @@ Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to 
 
 ![Screenshot](https://cdn.rawgit.com/slominskir/puppet-show/master/Screenshot.png)
 
-Use this web service to programatically convert web pages to PDF.  For example, create a cron job that emails a daily PDF report generated on a web page.  The HTML form allows you to easily build your request for embedding in another application.
+Use this web service to programatically convert web pages to PDF.  For example, create a cron job that uses the service to generate a daily report PDF from a web page and then email it.  The HTML form allows you to easily build your request for embedding in an application.  This service should only be installed internally on an intranet and not exposed to the Internet as it can be easily abused and would be a high security risk (For example using a file:// protocol in the URL exposes local files).
 
 ## Install
 ```bash
