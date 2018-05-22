@@ -2,7 +2,7 @@
   "name": "puppet-show",
   "description": "Print-to-PDF web service",
   "homepage": "https://github.com/slominskir/puppet-show",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "Apache-2.0",
   "author": "Ryan Slominski <ryans@jlab.org>",
   "main": "bin/www",
