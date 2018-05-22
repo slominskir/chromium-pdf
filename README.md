@@ -20,6 +20,13 @@ Now navigate your web browser to http://localhost:3000/puppet-show.
 ## API
 The URL parameter names for the web service end point __puppet-show/pdf__ mirror the option names for the puppeteer print-to-pdf function found [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions).  The puppet-show web form can also be used to explore the API.
 
+## Configure
+```bash
+export PORT=3000
+npm start
+```
+**Note**: Use the appropriate set environment variable command for your shell; Bash shell shown above.  For C Shell use "setenv PORT 3000", and for Windows use "set PORT 3000". 
+
 ## See Also
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
    
