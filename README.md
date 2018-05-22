@@ -7,4 +7,7 @@ Use this web service to programatically convert web pages to PDF.  For example, 
 
 ## See Also
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
+   
+## Similar Projects
    - [Puppetron](https://github.com/cheeaun/puppetron)
+   - [URL-to-PDF-API](https://github.com/alvarcarto/url-to-pdf-api)
