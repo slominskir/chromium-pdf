@@ -18,7 +18,7 @@ npm start
 Now navigate your web browser to http://localhost:3000/puppet-show.
 
 ## API
-The URL parameter names for the web service end point __puppet-show/pdf__ mirror the option names for puppeteer print-to-pdf function found [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions).  The puppet-show web form can also be used to explore the API.
+The URL parameter names for the web service end point __puppet-show/pdf__ mirror the option names for the puppeteer print-to-pdf function found [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions).  The puppet-show web form can also be used to explore the API.
 
 ## See Also
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
