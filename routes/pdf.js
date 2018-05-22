@@ -6,13 +6,15 @@ router = express.Router();
 router.get('/', function(req, res, next) {
         (async() => {
             var url = req.query.url,
-            landscape = req.query.orientation === 'landscape',
+            format = req.query.format || 'Letter',
+            landscape = req.query.landscape === 'true',
             units = req.query.units || 'in',
             top = req.query.top || '1',
             right = req.query.right || '1',
             bottom = req.query.bottom || '1',
             left = req.query.left || '1',
-            scale = req.query.scale || 1.0;
+            scale = req.query.scale || 1.0,
+            media = req.query.emulateMedia || 'print';
 
         scale = parseFloat(scale);
         /*Ensure floating point value*/
@@ -23,11 +25,11 @@ router.get('/', function(req, res, next) {
                 page = await
             browser.newPage();
 
-            await
-            page.goto(url, {waitUntil: 'networkidle2'});
-            var buffer = await
-            page.pdf({
+            await page.goto(url, {waitUntil: 'networkidle2'});
+            page.emulateMedia(media);
+            var buffer = await page.pdf({
                 printBackground: true,
+                format: format,
                 landscape: landscape,
                 margin: {top: top + units, right: right + units, bottom: bottom + units, left: left + units},
                 scale: scale
