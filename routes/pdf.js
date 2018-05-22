@@ -13,8 +13,10 @@ router.get('/', function(req, res, next) {
             right = req.query.right || '1',
             bottom = req.query.bottom || '1',
             left = req.query.left || '1',
+            printBackground = req.query.printBackground === 'true',
             scale = req.query.scale || 1.0,
-            media = req.query.emulateMedia || 'print';
+            media = req.query.emulateMedia || 'print',
+            pageRanges = req.query.pageRanges || '';
 
         scale = parseFloat(scale);
         /*Ensure floating point value*/
@@ -28,11 +30,12 @@ router.get('/', function(req, res, next) {
             await page.goto(url, {waitUntil: 'networkidle2'});
             page.emulateMedia(media);
             var buffer = await page.pdf({
-                printBackground: true,
+                printBackground: printBackground,
                 format: format,
                 landscape: landscape,
                 margin: {top: top + units, right: right + units, bottom: bottom + units, left: left + units},
-                scale: scale
+                scale: scale,
+                pageRanges: pageRanges
             });
 
             res.setHeader('content-type', 'application/pdf');

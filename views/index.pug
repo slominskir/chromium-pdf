@@ -38,15 +38,23 @@ block content
         div.li-key
             span Margins
         div.li-value
-            input#top(type='text' name='top' placeholder='top' value='1')
-            input#right(type='text' name='right' placeholder='right' value='1')
-            input#bottom(type='text' name='bottom' placeholder='bottom' value='1')
-            input#left(type='text' name='left' placeholder='left' value='1')
+            input#top(type='text' name='top' placeholder='top' value='0')
+            input#right(type='text' name='right' placeholder='right' value='0')
+            input#bottom(type='text' name='bottom' placeholder='bottom' value='0')
+            input#left(type='text' name='left' placeholder='left' value='0')
             select#units(name='units')
                 option(value='in' selected='selected') Inches
                 option(value='cm') Centimeters
                 option(value='mm') Millimeters
                 option(value='px') Pixels
+      li
+        div.li-key
+          span Background
+        div.li-value.radio-value
+          label(for='hide') Hide
+          input#hide(type='radio' name='printBackground' value='false' checked='checked')
+          label(for='show') Show
+          input#show(type='radio' name='printBackground' value='true')
       li
         div.li-key
             label(for='scale') Scale
@@ -60,6 +68,11 @@ block content
              input#print(type='radio' name='emulateMedia' value='print' checked='checked')
              label(for='screen') Screen
              input#screen(type='radio' name='emulateMedia' value='screen')
+      li
+         div.li-key
+             label(for='pageRanges') Page Ranges
+         div.li-value
+             input#pageRanges(type='text' name='pageRanges' value='' placeholder='Ex: "1-5, 8, 11-13". Empty = all')
     button#print-button.btn(type='submit') Print
   h3 Request Preview
   div#preview-div
