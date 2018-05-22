@@ -9,12 +9,13 @@ Use this web service to programatically convert web pages to PDF.  For example, 
 ```bash
 npm i puppet-show
 ```
-**Note**: This application runs on the Node.js JavaScript runtime.  Download it [here](https://nodejs.org/en/download/).
+**Note**: This application runs on the Node.js JavaScript runtime, which can be downloaded [here](https://nodejs.org/en/download/).
 
 ## Run
 ```bash
 npm start
 ```
+Now navigate your web browser to http://localhost:3000/puppet-show.
 
 ## See Also
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
