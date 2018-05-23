@@ -1,9 +1,11 @@
+<p align="right">
+<img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
+</p>
 <h1>
 Puppet Show
 <a href="https://travis-ci.com/slominskir/puppet-show"><img alt="Build Status" src="https://travis-ci.com/slominskir/puppet-show.svg?branch=master"/></a>
 </h1>
 <p>
-<img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
    Leverages the <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> library to expose Chromium print-to-pdf over a web service
 </p>
 
