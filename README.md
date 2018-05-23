@@ -4,7 +4,7 @@ Puppet Show
 </h1>
 <p>
 <img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
-Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to expose Chromium print-to-pdf over a web service
+   Leverages the <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> library to expose Chromium print-to-pdf over a web service
 </p>
 
 ![Screenshot](https://cdn.rawgit.com/slominskir/puppet-show/master/Screenshot.png)
