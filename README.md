@@ -33,6 +33,7 @@ npm start
 **Note**: Use the appropriate set environment variable command for your shell; Bash shell shown above.  For C Shell use "setenv PORT 3000", and for Windows use "set PORT 3000". 
 
 ## See Also
+   - [Puppet Show Wiki](https://github.com/slominskir/puppet-show/wiki)
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
    
 ## Similar Projects
