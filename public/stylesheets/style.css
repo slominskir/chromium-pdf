@@ -68,3 +68,10 @@ a {
 #pageRanges {
   width: 200px;
 }
+.header-logo {
+  height: 32px;
+  width: 32px;
+  background: url("/puppet-show/images/logo32x32.png");
+  display: inline-block;
+  vertical-align: bottom;
+}
