@@ -1,5 +1,5 @@
+<img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo.png"/>
 <h1>
-<img alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo.png"/>
 Puppet Show
 <a href="https://travis-ci.com/slominskir/puppet-show"><img alt="Build Status" src="https://travis-ci.com/slominskir/puppet-show.svg?branch=master"/></a>
 </h1>
