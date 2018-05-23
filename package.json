@@ -2,7 +2,7 @@
   "name": "puppet-show",
   "description": "Print-to-PDF web service",
   "homepage": "https://github.com/slominskir/puppet-show",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "Apache-2.0",
   "author": "Ryan Slominski <ryans@jlab.org>",
   "main": "bin/www",
@@ -19,9 +19,6 @@
     "puppeteer",
     "pdf"
   ],
-  "config": {
-    "port": "3000"
-  },
   "dependencies": {
     "express": "~4.16.0",
     "cookie-parser": "~1.4.3",
