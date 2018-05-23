@@ -1,5 +1,5 @@
-<p align="right">
-<img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
+<p align="center">
+<img alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
 </p>
 <h1>
 Puppet Show
