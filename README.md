@@ -1,10 +1,10 @@
-<img align="right" alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
 <h1>
 Puppet Show
 <a href="https://travis-ci.com/slominskir/puppet-show"><img alt="Build Status" src="https://travis-ci.com/slominskir/puppet-show.svg?branch=master"/></a>
 </h1>
-
-Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to expose Chromium print-to-pdf over a web service
+<p>
+   Leverages the <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> library to expose Chromium print-to-pdf over a web service
+</p>
 
 ![Screenshot](https://cdn.rawgit.com/slominskir/puppet-show/master/Screenshot.png)
 
@@ -39,3 +39,7 @@ npm start
 ## Similar Projects
    - [Puppetron](https://github.com/cheeaun/puppetron)
    - [URL-to-PDF-API](https://github.com/alvarcarto/url-to-pdf-api)
+
+<p align="center">
+<img alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
+</p>
