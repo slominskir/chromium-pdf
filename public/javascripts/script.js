@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var updatePreview = function(event){
         var str = $(formElement).serialize();
-        previewElement.innerHTML=location.origin.concat('/puppet-show/print?').concat(str);
+        previewElement.innerHTML=location.origin.concat('/puppet-show/pdf?').concat(str);
     };
 
     formElement.addEventListener('change', updatePreview);
