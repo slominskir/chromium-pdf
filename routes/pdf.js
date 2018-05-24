@@ -16,19 +16,21 @@ router.get('/', function(req, res, next) {
             printBackground = req.query.printBackground === 'true',
             scale = req.query.scale || 1.0,
             media = req.query.emulateMedia || 'print',
-            pageRanges = req.query.pageRanges || '';
+            pageRanges = req.query.pageRanges || '',
+            ignoreHTTPSErrors = req.query.ignoreHTTPSErrors === 'true',
+            filename = req.query.filename || null;
 
-        scale = parseFloat(scale);
         /*Ensure floating point value*/
+        scale = parseFloat(scale);
 
         try {
-            var browser = await
-            puppeteer.launch(),
-                page = await
-            browser.newPage();
+            var browser = await puppeteer.launch({ignoreHTTPSErrors: ignoreHTTPSErrors}),
+                page = await browser.newPage();
 
             await page.goto(url, {waitUntil: 'networkidle2'});
+
             page.emulateMedia(media);
+
             var buffer = await page.pdf({
                 printBackground: printBackground,
                 format: format,
@@ -39,7 +41,11 @@ router.get('/', function(req, res, next) {
             });
 
             res.setHeader('content-type', 'application/pdf');
-            res.setHeader('content-disposition', 'attachment; filename="html.pdf"');
+
+            if(filename !== null) {
+                res.setHeader('content-disposition', 'attachment; filename="' + filename + '"');
+            }
+
             res.send(buffer);
 
             await browser.close();

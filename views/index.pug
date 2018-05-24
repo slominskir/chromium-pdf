@@ -77,6 +77,19 @@ block content
              label(for='pageRanges') Page Ranges
          div.li-value
              input#pageRanges(type='text' name='pageRanges' value='' placeholder='Ex: "1-5, 8, 11-13". Empty = all')
+      li
+         div.li-key
+             span HTTPS Errors
+         div.li-value.radio-value
+             label(for='fail') Fail
+             input#fail(type='radio' name='ignoreHTTPSErrors' value='false' checked='checked')
+             label(for='ignore') Ignore
+             input#ignore(type='radio' name='ignoreHTTPSErrors' value='true')
+      li
+         div.li-key
+             label(for='filename') Filename
+         div.li-value
+             input#filename(type='text' name='filename' placeholder='Empty = no header')
     button#print-button.btn(type='submit') Print
   h3 Request Preview
   div#preview-div
