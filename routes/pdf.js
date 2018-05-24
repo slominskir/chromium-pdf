@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
             bottom = req.query.bottom || '1',
             left = req.query.left || '1',
             printBackground = req.query.printBackground === 'true',
+            displayHeaderFooter = req.query.displayHeaderFooter === 'true',
             scale = req.query.scale || 1.0,
             media = req.query.emulateMedia || 'print',
             pageRanges = req.query.pageRanges || '',
@@ -39,6 +40,7 @@ router.get('/', function(req, res, next) {
 
             var buffer = await page.pdf({
                 printBackground: printBackground,
+                displayHeaderFooter: displayHeaderFooter,
                 format: format,
                 landscape: landscape,
                 margin: {top: top + units, right: right + units, bottom: bottom + units, left: left + units},

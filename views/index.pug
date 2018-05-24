@@ -79,6 +79,14 @@ block content
              input#pageRanges(type='text' name='pageRanges' value='' placeholder='Ex: "1-5, 8, 11-13". Empty = all')
       li
          div.li-key
+             span Header and Footer
+         div.li-value
+             label(for='headfoothide') Hide
+             input#headfoothide(type='radio' name='displayHeaderFooter' value='false' checked='checked')
+             label(for='headfootshow') Show
+             input#headfootshow(type='radio' name='displayHeaderFooter' value='true')
+      li
+         div.li-key
              span HTTPS Errors
          div.li-value.radio-value
              label(for='fail') Fail
