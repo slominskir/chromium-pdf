@@ -1,10 +1,5 @@
-<h1>
-Puppet Show
-<a href="https://travis-ci.com/slominskir/puppet-show"><img alt="Build Status" src="https://travis-ci.com/slominskir/puppet-show.svg?branch=master"/></a>
-</h1>
-<p>
-   Leverages the <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> library to expose Chromium print-to-pdf over a web service
-</p>
+# Puppet Show [![Build Status](https://travis-ci.com/slominskir/puppet-show.svg?branch=master)](https://travis-ci.com/slominskir/puppet-show)
+Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to expose Chromium print-to-pdf over a web service
 
 ![Screenshot](https://cdn.rawgit.com/slominskir/puppet-show/master/Screenshot.png)
 
