@@ -41,7 +41,13 @@ a {
 .li-value input {
   margin-right: 1em;
 }
-#top, #right, #bottom, #left, #scale {
+#top,
+#right,
+#bottom,
+#left,
+#scale,
+#width,
+#height {
   width: 4em;
 }
 .radio-value label, .radio.value input {
