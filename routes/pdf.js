@@ -15,6 +15,8 @@ router.get('/', function(req, res, next) {
             left = req.query.left || '1',
             printBackground = req.query.printBackground === 'true',
             displayHeaderFooter = req.query.displayHeaderFooter === 'true',
+            headerTemplate = req.query.headerTemplate || null,
+            footerTemplate = req.query.footerTemplate || null,
             scale = req.query.scale || 1.0,
             media = req.query.emulateMedia || 'print',
             pageRanges = req.query.pageRanges || '',
@@ -38,7 +40,7 @@ router.get('/', function(req, res, next) {
 
             page.emulateMedia(media);
 
-            var buffer = await page.pdf({
+            var options = {
                 printBackground: printBackground,
                 displayHeaderFooter: displayHeaderFooter,
                 format: format,
@@ -46,7 +48,17 @@ router.get('/', function(req, res, next) {
                 margin: {top: top + units, right: right + units, bottom: bottom + units, left: left + units},
                 scale: scale,
                 pageRanges: pageRanges
-            });
+            };
+
+            if(headerTemplate !== null) {
+                options.headerTemplate = headerTemplate;
+            }
+
+            if(footerTemplate !== null) {
+                options.footerTemplate = footerTemplate;
+            }
+
+            var buffer = await page.pdf(options);
 
             res.setHeader('content-type', 'application/pdf');
 
@@ -58,7 +70,7 @@ router.get('/', function(req, res, next) {
 
             await browser.close();
         } catch(error) {
-            next(createError(400, error));
+            next(createError(425, error));
         }
     })();
 });

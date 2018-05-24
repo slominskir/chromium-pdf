@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0 1em;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -74,4 +74,8 @@ a {
   background: url("/puppet-show/images/logo32x32.png");
   display: inline-block;
   vertical-align: bottom;
+}
+#headerTemplate,
+#footerTemplate {
+  width: 400px;
 }

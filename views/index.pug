@@ -87,6 +87,16 @@ block content
              input#headfootshow(type='radio' name='displayHeaderFooter' value='true')
       li
          div.li-key
+             label(for='headerTemplate') Custom Header HTML
+         div.li-value
+             input#headerTemplate(type='text' name='headerTemplate' placeholder='Ex: "<style>h1{font-size: 16px;}</style><h1>Hello</h1>"')
+      li
+         div.li-key
+             label(for='footerTemplate') Custom Footer HTML
+         div.li-value
+             input#footerTemplate(type='text' name='footerTemplate')
+      li
+         div.li-key
              span HTTPS Errors
          div.li-value.radio-value
              label(for='fail') Fail
