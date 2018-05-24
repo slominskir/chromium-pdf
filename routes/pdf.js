@@ -6,13 +6,14 @@ router = express.Router();
 router.get('/', function(req, res, next) {
         (async() => {
             var url = req.query.url,
-            format = req.query.format || 'Letter',
+            format = req.query.format || null,
+            width = req.query.width || '8.5in',
+            height = req.query.height || '11in',
             landscape = req.query.landscape === 'true',
-            units = req.query.units || 'in',
-            top = req.query.top || '1',
-            right = req.query.right || '1',
-            bottom = req.query.bottom || '1',
-            left = req.query.left || '1',
+            top = req.query.top || '0in',
+            right = req.query.right || '0in',
+            bottom = req.query.bottom || '0in',
+            left = req.query.left || '0in',
             printBackground = req.query.printBackground === 'true',
             displayHeaderFooter = req.query.displayHeaderFooter === 'true',
             headerTemplate = req.query.headerTemplate || null,
@@ -43,12 +44,18 @@ router.get('/', function(req, res, next) {
             var options = {
                 printBackground: printBackground,
                 displayHeaderFooter: displayHeaderFooter,
-                format: format,
                 landscape: landscape,
-                margin: {top: top + units, right: right + units, bottom: bottom + units, left: left + units},
+                margin: {top: top, right: right, bottom: bottom, left: left},
                 scale: scale,
                 pageRanges: pageRanges
             };
+
+            if(format === null || format === 'custom') {
+                options.width = width;
+                options.height = height;
+            } else {
+                options.format = format;
+            }
 
             if(headerTemplate !== null) {
                 options.headerTemplate = headerTemplate;
