@@ -18,7 +18,9 @@ router.get('/', function(req, res, next) {
             media = req.query.emulateMedia || 'print',
             pageRanges = req.query.pageRanges || '',
             ignoreHTTPSErrors = req.query.ignoreHTTPSErrors === 'true',
-            filename = req.query.filename || null;
+            filename = req.query.filename || null,
+            waitUntil = req.query.waitUntil,
+            waitForSelector = req.query.waitForSelector || null;
 
         /*Ensure floating point value*/
         scale = parseFloat(scale);
@@ -27,7 +29,11 @@ router.get('/', function(req, res, next) {
             var browser = await puppeteer.launch({ignoreHTTPSErrors: ignoreHTTPSErrors}),
                 page = await browser.newPage();
 
-            await page.goto(url, {waitUntil: 'networkidle2'});
+            await page.goto(url, {waitUntil: waitUntil});
+
+            if(waitForSelector !== null) {
+                await page.waitForSelector(waitForSelector);
+            }
 
             page.emulateMedia(media);
 

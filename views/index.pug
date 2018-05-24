@@ -90,6 +90,23 @@ block content
              label(for='filename') Filename
          div.li-value
              input#filename(type='text' name='filename' placeholder='Empty = no header')
+      li
+         div.li-key
+             span Wait Until
+         div.li-value
+              label(for='load') load
+              input#load(type='checkbox' name='waitUntil' value='load')
+              label(for='domcontentloaded') DOMContentLoaded
+              input#domcontentloaded(type='checkbox' name='waitUntil' value='domcontentloaded')
+              label(for='networkidle0') networkidle0
+              input#networkidle0(type='checkbox' name='waitUntil' value='networkidle0')
+              label(for='networkidle2') networkidle2
+              input#networkidle2(type='checkbox' name='waitUntil' value='networkidle2')
+      li
+         div.li-key
+             label(for='waitForSelector') Wait For Selector
+         div.li-value
+             input#waitForSelector(type='text' name='waitForSelector' placeholder='Ex: "span.done"')
     button#print-button.btn(type='submit') Print
   h3 Request Preview
   div#preview-div
