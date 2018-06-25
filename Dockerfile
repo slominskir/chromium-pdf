@@ -1,4 +1,4 @@
-# Provided by: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+# Inspired by: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
 
 FROM node:8-slim
 
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -yq libgconf-2-4
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
 # installs, work.
 RUN apt-get update && apt-get install -y wget --no-install-recommends \
-    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && wget --no-check-certificate -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
     && apt-get update \
     && apt-get install -y google-chrome-unstable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst ttf-freefont \
@@ -27,17 +27,29 @@ RUN chmod +x /usr/local/bin/dumb-init
 #     browser.launch({executablePath: 'google-chrome-unstable'})
 # ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-# Install puppeteer so it's available in the container.
-RUN npm i puppeteer
+RUN npm config set strict-ssl false -g
 
 # Add user so we don't need --no-sandbox.
 RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
+    && mkdir -p /home/pptruser/node_modules \
     && chown -R pptruser:pptruser /home/pptruser \
-    && chown -R pptruser:pptruser /node_modules
+    && chown -R pptruser:pptruser /home/pptruser/node_modules
+
+WORKDIR /home/pptruser
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
 
 # Run everything after as non-privileged user.
 USER pptruser
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["google-chrome-unstable"]
+CMD ["npm", "start"]
+
+# Now navigate web browser to http://localhost:3000/puppet-show/
