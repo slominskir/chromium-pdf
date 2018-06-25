@@ -29,6 +29,15 @@ npm start
 ```
 **Note**: Use the appropriate set environment variable command for your shell; Bash shell shown above.  For C Shell use "setenv PORT 3000", and for Windows use "set PORT 3000". 
 
+## Docker (Optional)
+```bash
+git clone https://github.com/slominskir/puppet-show
+cd puppet-show
+docker build -t slominskir/puppet-show .
+docker run -d --rm -p 3000:3000 slominskir/puppet-show
+# Navigate web browser to http://localhost:3000/puppet-show/
+```
+
 ## See Also
    - [Puppet Show Wiki](https://github.com/slominskir/puppet-show/wiki)
    - [Chrome Remote Control (DevTools) Protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page#method-printToPDF)
