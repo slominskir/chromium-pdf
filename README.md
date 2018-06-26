@@ -54,6 +54,4 @@ docker run -d --rm -p 3000:3000 slominskir/puppet-show
    - [Puppetron](https://github.com/cheeaun/puppetron)
    - [URL-to-PDF-API](https://github.com/alvarcarto/url-to-pdf-api)
 
-<p align="center">
-<img alt="Logo" src="https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png"/>
-</p>
+![Logo](https://cdn.rawgit.com/slominskir/puppet-show/master/public/images/logo64x64.png)
