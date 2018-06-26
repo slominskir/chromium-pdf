@@ -10,7 +10,7 @@ services:
 
 install:
   - docker build -t slominskir/puppet-show .
-  - docker run -d -rm -p 3000:3000 slominskir/puppet-show
+  - docker run -d --rm -p 3000:3000 slominskir/puppet-show
   
 script:
   - docker ps | grep -q slominskir
