@@ -1,23 +1,19 @@
 extends layout
 
 block content
-  h1
-    span.header-logo
-    |
-    |
-    span.header-text= title
-  h2 Print-to-PDF
-  form#parameters-form(method='get' action='/puppet-show/pdf')
-    ul.key-value-list
-      li
-        div.li-key
-          label(for='url') URL
-        div.li-value
-          input#url.form-control(type='url' name='url')
-      li
-        div.li-key
+  div#pdf-content
+    h2 Print-to-PDF
+    form#pdf-form(method='get' action='/puppet-show/pdf')
+      ul.key-value-list
+        li
+          div.li-key
+            label(for='url') URL
+          div.li-value
+            input#url.form-control.url-input(type='url' name='url')
+        li
+          div.li-key
             label(for='format') Page Format
-        div.li-value.radio-value
+          div.li-value.radio-value
             select#format(name='format')
                 option(value='Letter' selected='selected') Letter (8.5in by 11in)
                 option(value='Legal') Legal (8.5in by 14in)
@@ -31,90 +27,90 @@ block content
                 option(value='A5') A5 (148mm by 210mm)
                 option(value='A6') A6 (105mm by 148mm)
                 option(value='custom') Custom...
-      li#custom
-        div.li-key
+        li#custom
+          div.li-key
             span Custom Page Size
-        div.li-value
+          div.li-value
             input#height(type='text' name='height' placeholder='width' value='8.5in')
             input#width(type='text' name='width' placeholder='height' value='11in')
-      li
-        div.li-key
-          span Orientation
-        div.li-value.radio-value
-          label(for='portrait') Portrait
-          input#portrait(type='radio' name='landscape' value='false' checked='checked')
-          label(for='landscape') Landscape
-          input#landscape(type='radio' name='landscape' value='true')
-      li
-        div.li-key
+        li
+          div.li-key
+            span Orientation
+          div.li-value.radio-value
+            label(for='portrait') Portrait
+            input#portrait(type='radio' name='landscape' value='false' checked='checked')
+            label(for='landscape') Landscape
+            input#landscape(type='radio' name='landscape' value='true')
+        li
+          div.li-key
             span Margins
-        div.li-value
+          div.li-value
             input#top(type='text' name='top' placeholder='top' value='0in')
             input#right(type='text' name='right' placeholder='right' value='0in')
             input#bottom(type='text' name='bottom' placeholder='bottom' value='0in')
             input#left(type='text' name='left' placeholder='left' value='0in')
             span (in, cm, mm, px)
-      li
-        div.li-key
-          span Background
-        div.li-value.radio-value
-          label(for='hide') Hide
-          input#hide(type='radio' name='printBackground' value='false' checked='checked')
-          label(for='show') Show
-          input#show(type='radio' name='printBackground' value='true')
-      li
-        div.li-key
+        li
+          div.li-key
             label(for='scale') Scale
-        div.li-value
+          div.li-value
             input#scale(type='number' name='scale' value='1' min='0' max='1' step='0.01')
-      li
-         div.li-key
-             span Media
-         div.li-value.radio-value
-             label(for='print') Print
-             input#print(type='radio' name='emulateMedia' value='print' checked='checked')
-             label(for='screen') Screen
-             input#screen(type='radio' name='emulateMedia' value='screen')
-      li
-         div.li-key
+        li
+          div.li-key
              label(for='pageRanges') Page Ranges
-         div.li-value
+          div.li-value
              input#pageRanges(type='text' name='pageRanges' value='' placeholder='Ex: "1-5, 8, 11-13". Empty = all')
-      li
-         div.li-key
+        li
+          div.li-key
              span Header and Footer
-         div.li-value
+          div.li-value.radio-value
              label(for='headfoothide') Hide
              input#headfoothide(type='radio' name='displayHeaderFooter' value='false' checked='checked')
              label(for='headfootshow') Show
              input#headfootshow(type='radio' name='displayHeaderFooter' value='true')
-      li
-         div.li-key
+        li
+          div.li-key
              label(for='headerTemplate') Custom Header HTML
-         div.li-value
+          div.li-value
              input#headerTemplate(type='text' name='headerTemplate' placeholder='Ex: "<style>h1{font-size: 16px;}</style><h1>Hello</h1>"')
-      li
-         div.li-key
+        li
+          div.li-key
              label(for='footerTemplate') Custom Footer HTML
-         div.li-value
+          div.li-value
              input#footerTemplate(type='text' name='footerTemplate')
-      li
-         div.li-key
+        li
+          div.li-key
+            span Background
+          div.li-value.radio-value
+            label(for='hide') Hide
+            input#hide(type='radio' name='printBackground' value='false' checked='checked')
+            label(for='show') Show
+            input#show(type='radio' name='printBackground' value='true')        
+        li
+          div.li-key
+             span Media
+          div.li-value.radio-value
+             label(for='print') Print
+             input#print(type='radio' name='emulateMedia' value='print' checked='checked')
+             label(for='screen') Screen
+             input#screen(type='radio' name='emulateMedia' value='screen')
+        li
+          div.li-key
              span HTTPS Errors
-         div.li-value.radio-value
+          div.li-value.radio-value
              label(for='fail') Fail
              input#fail(type='radio' name='ignoreHTTPSErrors' value='false' checked='checked')
              label(for='ignore') Ignore
              input#ignore(type='radio' name='ignoreHTTPSErrors' value='true')
-      li
-         div.li-key
+        li
+          div.li-key
              label(for='filename') Filename
-         div.li-value
+          div.li-value
              input#filename(type='text' name='filename' placeholder='Empty = no header')
-      li
-         div.li-key
+        li
+          div.li-key
              span Wait Until
-         div.li-value
+          div.li-value
               label(for='load') load
               input#load(type='checkbox' name='waitUntil' value='load')
               label(for='domcontentloaded') DOMContentLoaded
@@ -123,11 +119,81 @@ block content
               input#networkidle0(type='checkbox' name='waitUntil' value='networkidle0')
               label(for='networkidle2') networkidle2
               input#networkidle2(type='checkbox' name='waitUntil' value='networkidle2')
-      li
-         div.li-key
+        li
+          div.li-key
              label(for='waitForSelector') Wait For Selector
-         div.li-value
+          div.li-value
              input#waitForSelector(type='text' name='waitForSelector' placeholder='Ex: "span.done"')
-    button#print-button.btn(type='submit') Print
-  h3 Request Preview
-  div#preview-div
+      button#print-button.btn(type='submit') Print
+    h3 Request Preview
+    div#pdf-preview-div.preview-div
+  div#screenshot-content(style="display: none;")
+    h2 Screenshot
+    form#screenshot-form(method='get' action='/puppet-show/screenshot')
+      ul.key-value-list
+        li
+          div.li-key
+            label(for='screenshot-url') URL
+          div.li-value
+            input#screenshot-url.form-control.url-input(type='url' name='url')
+        li
+          div.li-key
+              label(for='type') Type
+          div.li-value.radio-value
+              select#type(name='type')
+                option(value='png' selected='selected') PNG
+                option(value='jpeg') JPEG
+        li
+          div.li-key
+            label(for='screenshot-quality') Quality
+          div.li-value
+            input#screenshot-quality(type='number' max='100' min='0' name='quality' placeholder='JPEG only')
+        li
+          div.li-key
+            span Background
+          div.li-value.radio-value
+            label(for='screenshot-hide') Hide
+            input#screenshot-hide(type='radio' name='omitBackground' value='true' checked='checked')
+            label(for='screenshot-show') Show
+            input#screenshot-show(type='radio' name='omitBackground' value='false')
+        li
+          div.li-key
+            span Media
+          div.li-value.radio-value
+            label(for='screenshot-print') Print
+            input#screenshot-print(type='radio' name='emulateMedia' value='print' checked='checked')
+            label(for='screenshot-screen') Screen
+            input#screenshot-screen(type='radio' name='emulateMedia' value='screen')
+        li
+          div.li-key
+            span HTTPS Errors
+          div.li-value.radio-value
+             label(for='screenshot-fail') Fail
+             input#screenshot-fail(type='radio' name='ignoreHTTPSErrors' value='false' checked='checked')
+             label(for='screenshot-ignore') Ignore
+             input#screenshot-ignore(type='radio' name='ignoreHTTPSErrors' value='true')
+        li
+          div.li-key
+            label(for='screenshot-filename') Filename
+          div.li-value
+            input#screenshot-filename(type='text' name='filename' placeholder='Empty = no header')
+        li
+          div.li-key
+            span Wait Until
+          div.li-value
+              label(for='screenshot-load') load
+              input#screenshot-load(type='checkbox' name='waitUntil' value='load')
+              label(for='screenshot-domcontentloaded') DOMContentLoaded
+              input#screenshot-domcontentloaded(type='checkbox' name='waitUntil' value='domcontentloaded')
+              label(for='screenshot-networkidle0') networkidle0
+              input#screenshot-networkidle0(type='checkbox' name='waitUntil' value='networkidle0')
+              label(for='screenshot-networkidle2') networkidle2
+              input#screenshot-networkidle2(type='checkbox' name='waitUntil' value='networkidle2')
+        li
+          div.li-key
+             label(for='screenshot-waitForSelector') Wait For Selector
+          div.li-value
+             input#screenshot-waitForSelector(type='text' name='waitForSelector' placeholder='Ex: "span.done"')
+      button#snap-button.btn(type='submit') Snap
+    h3 Request Preview
+    div#screenshot-preview-div.preview-div

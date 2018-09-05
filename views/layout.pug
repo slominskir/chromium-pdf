@@ -6,6 +6,23 @@ html(lang='en')
     link(rel='shortcut icon' href='/puppet-show/images/favicon.ico')
     link(rel='stylesheet' href='/puppet-show/stylesheets/style.css')
   body
-    block content
+    div#page
+      header
+        h1
+          span#page-header-logo
+          |
+          |
+          span#page-header-text= title
+        nav#primary-nav
+          ul
+            li#pdf-link.current-primary
+              a(href='#pdf') Print-to-PDF
+            |
+            |
+            li#screenshot-link
+              a(href='#screenshot') Screenshot
+      div#content
+        div#content-liner
+          block content
     script(type='text/javascript' src='/puppet-show/jquery/jquery.js')
     script(type='text/javascript' src='/puppet-show/javascripts/script.js')

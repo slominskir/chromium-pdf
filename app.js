@@ -7,6 +7,7 @@ var logger = require('morgan');
 var rootRouter = require('./routes/root');
 var indexRouter = require('./routes/index');
 var pdfRouter = require('./routes/pdf');
+var screenshotRouter = require('./routes/screenshot');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/puppet-show/jquery', [express.static(__dirname + '/node_modules/jquery
 app.use('/', rootRouter);
 app.use('/puppet-show', indexRouter);
 app.use('/puppet-show/pdf', pdfRouter);
+app.use('/puppet-show/screenshot', screenshotRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,7 +41,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {title: 'Puppet Show'});
 });
 
 module.exports = app;

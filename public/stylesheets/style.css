@@ -1,10 +1,74 @@
+/*Page Structure*/
 body {
-  padding: 0 1em;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: "Verdana", sans-serif;
+}
+#page {
+    margin: 0 auto;
+    padding: 32px;
+    max-width: 1200px;
+    min-width: 1024px; 
+}
+#content {
+    border: 1px solid black;
+    box-shadow: 8px 8px 8px #979797;
+    border-radius: 8px 8px 8px 8px;
+    background-color: white;
+}
+#content-liner {
+    border: 1px solid black;
+    margin: 8px;
+    min-height: 512px;
+}
+section {
+    margin: 16px;
+}
+h1 {
+    margin: 0 0 16px 0;
+    text-shadow: 3px 3px 3px #979797;
+}
+#page-header-logo {
+    background: url("../img/logo32x32.png") 0 0;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    vertical-align: bottom;
+}
+/*Nav*/
+#primary-nav ul {
+    padding: 0 4px;
+    list-style-type: none;
+    margin: 0 0 0 16px;	
+}
+#primary-nav li {
+    border: 1px solid black;
+    border-radius: 8px 8px 0 0;
+    padding: 8px 8px 4px 8px;
+    position: relative;
+    bottom: -1px;
+    z-index: 1;
+    background-color: lightgray;
+    display: inline-block;
+}
+#primary-nav li.current-primary {
+    border-bottom: 1px solid white;
+    background-color: white;
+}
+/*Links*/
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    color: red;
 }
 
-a {
-  color: #00B7FF;
+
+h2,
+h3 {
+    margin: 16px;
 }
 
 /*Key-Value List*/
@@ -50,31 +114,40 @@ a {
 #height {
   width: 4em;
 }
+.radio-value label {
+    display: inline-block;
+    min-width: 75px;
+    text-align: right;
+}
 .radio-value label, .radio.value input {
   vertical-align: top;
 }
 .radio-value input {
   margin-right: 2em;
 }
-#parameters-form {
+form {
   display: inline-block;
+  margin: 0 16px;
 }
-#print-button {
+button[type=submit] {
   float: right;
 }
-#preview-div {
+.preview-div {
   border: 1px solid black;
   margin: 1em;
   padding: 1em;
   word-wrap: break-word;
 }
-#url {
+.url-input {
   width: 300px;
+}
+#screenshot-quality {
+    width: 100px;
 }
 #pageRanges {
   width: 200px;
 }
-.header-logo {
+#page-header-logo {
   height: 32px;
   width: 32px;
   background: url("/puppet-show/images/logo32x32.png");
