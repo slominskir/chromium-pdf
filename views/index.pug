@@ -150,6 +150,14 @@ block content
             input#screenshot-quality(type='number' max='100' min='0' name='quality' placeholder='JPEG only')
         li
           div.li-key
+            span Mode
+          div.li-value.radio-value
+            label(for='screenshot-viewport') Viewport
+            input#screenshot-viewport(type='radio' name='fullPage' value='false' checked='checked')
+            label(for='screenshot-fullpage') Full Page
+            input#screenshot-fullpage(type='radio' name='fullPage' value='true')
+        li
+          div.li-key
             span Background
           div.li-value.radio-value
             label(for='screenshot-hide') Hide
