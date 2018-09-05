@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var rootRouter = require('./routes/root');
 var indexRouter = require('./routes/index');
 var pdfRouter = require('./routes/pdf');
 
@@ -21,6 +22,7 @@ app.use('/puppet-show', express.static(path.join(__dirname, 'public')));
 
 app.use('/puppet-show/jquery', [express.static(__dirname + '/node_modules/jquery/dist/')]);
 
+app.use('/', rootRouter);
 app.use('/puppet-show', indexRouter);
 app.use('/puppet-show/pdf', pdfRouter);
 
