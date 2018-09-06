@@ -1,6 +1,6 @@
 {
   "name": "puppet-show",
-  "description": "Print-to-PDF web service",
+  "description": "Print-to-PDF and Screenshot web service",
   "homepage": "https://github.com/slominskir/puppet-show",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -17,7 +17,8 @@
     "pdf-generation",
     "service",
     "puppeteer",
-    "pdf"
+    "pdf",
+    "screenshot"
   ],
   "dependencies": {
     "cookie-parser": "~1.4.3",
