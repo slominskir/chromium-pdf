@@ -9,6 +9,9 @@ router.get('/', function(req, res, next) {
             type = req.query.type || 'png',
             quality = req.query.quality || null,
             fullPage = req.query.fullPage === 'true',
+            viewportWidth = req.query.viewportWidth || 800,
+            viewportHeight = req.query.viewportHeight || 600,
+            deviceScaleFactor = req.query.deviceScaleFactor || 1,
             clipX = req.query.clipX || null,
             clipY = req.query.clipY || null,
             clipWidth = req.query.clipWidth || null,
@@ -22,8 +25,14 @@ router.get('/', function(req, res, next) {
             waitForSelector = req.query.waitForSelector || null;
 
         try {
+            /*Ensure numbers*/
+            viewportWidth = parseInt(viewportWidth);
+            viewportHeight = parseInt(viewportHeight);
+            deviceScaleFactor = parseFloat(deviceScaleFactor);
+            
             var browser = await puppeteer.launch({ignoreHTTPSErrors: ignoreHTTPSErrors}),
                 page = await browser.newPage();
+                await page.setViewport({width: viewportWidth, height: viewportHeight, deviceScaleFactor: deviceScaleFactor});
 
             await page.goto(url, {waitUntil: waitUntil});
 

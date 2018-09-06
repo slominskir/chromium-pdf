@@ -150,8 +150,19 @@ block content
             input#screenshot-quality(type='number' max='100' min='0' name='quality' placeholder='JPEG only')
         li
           div.li-key
+            span Viewport
+          div.li-value.dimension-value
+            input#viewportWidth(type='text' name='viewportWidth' placeholder='Width' value='800')
+            input#viewportHeight(type='text' name='viewportHeight' placeholder='Height' value='600')
+        li
+          div.li-key
+            span Scale Factor
+          div.li-value.dimension-value
+            input#deviceScaleFactor(type='text' name='deviceScaleFactor' placeholder='Scale' value='1')
+        li
+          div.li-key
             span Clip
-          div.li-value#clip-value
+          div.li-value.dimension-value
             input#clipX(type='text' name='clipX' placeholder='X')
             input#clipY(type='text' name='clipY' placeholder='Y')
             input#clipWidth(type='text' name='clipWidth' placeholder='Width')

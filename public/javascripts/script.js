@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var defaultScreenshotOptions = {
         type: 'png',
         fullPage: 'false',
+        viewportWidth: '800',
+        viewportHeight: '600',
+        deviceScaleFactor: '1',
         encoding: 'binary',
         omitBackground: 'true',
         emulateMedia: 'print',
