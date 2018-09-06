@@ -6,9 +6,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
             formatElement = document.getElementById("format"),
             customElement = document.getElementById("custom");
 
+    var defaultPdfOptions = {
+        format: 'Letter',
+        landscape: 'false',
+        height: '8.5in',
+        width: '11in',
+        top: '0in',
+        right: '0in',
+        bottom: '0in',
+        left: '0in',
+        scale: '1',
+        displayHeaderFooter: 'false',
+        printBackground: 'false',
+        emulateMedia: 'print',
+        ignoreHTTPSErrors: 'false'
+    };
+
     var updatePdfPreview = function (event) {
-        var str = $(pdfForm).serialize();
-        pdfPreview.innerHTML = location.origin.concat('/puppet-show/pdf?').concat(str);
+        var str = $(pdfForm).find(":input").filter(function (index, element) {
+            var $elem = $(element),
+                    val = $elem.val(),
+                    result = val !== '';
+            if (result) {
+                var name = $elem.attr('name'),
+                        value = defaultPdfOptions[name];
+                if (defaultPdfOptions.hasOwnProperty(name)) {
+                    result = value !== val;
+                }
+            }
+            return result;
+        }).serialize();
+        
+        var q = (str === '' ? '' : '?');
+        
+        pdfPreview.innerHTML = location.origin.concat('/puppet-show/pdf').concat(q).concat(str);        
 
         if (formatElement.value === 'custom') {
             customElement.style.display = "table-row";
@@ -17,9 +48,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     };
 
+    var defaultScreenshotOptions = {
+        type: 'png',
+        fullPage: 'false',
+        encoding: 'binary',
+        omitBackground: 'true',
+        emulateMedia: 'print',
+        ignoreHTTPSErrors: 'false'
+    };
+
+    /*filter out empty and default values*/
     var updateScreenshotPreview = function (event) {
-        var str = $(screenshotForm).serialize();
-        screenshotPreview.innerHTML = location.origin.concat('/puppet-show/screenshot?').concat(str);
+        var str = $(screenshotForm).find(":input").filter(function (index, element) {
+            var $elem = $(element),
+                    val = $elem.val(),
+                    result = val !== '';
+            if (result) {
+                var name = $elem.attr('name'),
+                        value = defaultScreenshotOptions[name];
+                if (defaultScreenshotOptions.hasOwnProperty(name)) {
+                    result = value !== val;
+                }
+            }
+            return result;
+        }).serialize();
+        
+        var q = (str === '' ? '' : '?');
+        
+        screenshotPreview.innerHTML = location.origin.concat('/puppet-show/screenshot').concat(q).concat(str);
     };
 
     pdfForm.addEventListener('change', updatePdfPreview);
@@ -52,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     if (window.location.hash) {
         var hash = window.location.hash.substring(1);
-        
-        if('screenshot' === hash) {
+
+        if ('screenshot' === hash) {
             screenshotLink.dispatchEvent(new Event('click'));
         }
     }
