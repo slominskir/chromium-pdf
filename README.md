@@ -1,5 +1,5 @@
 # Puppet Show [![Build Status](https://travis-ci.com/slominskir/puppet-show.svg?branch=master)](https://travis-ci.com/slominskir/puppet-show)
-Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to expose Chromium print-to-pdf and screenshot over a web service
+Leverages the [Puppeteer](https://github.com/GoogleChrome/puppeteer) library to expose Chromium print-to-pdf and screenshot over a service
 
 ![Screenshot](https://cdn.rawgit.com/slominskir/puppet-show/master/Screenshot.png)
 
@@ -22,7 +22,7 @@ The URL parameter names for the web service end point __puppet-show/pdf__ and __
 
 **Note**: The default values match the puppeteer defaults and the only required parameter is "url".
 
-## Configure
+## Configure (Optional)
 ```bash
 export PORT=3000
 npm start
