@@ -18,7 +18,7 @@ npm start
 Now navigate your web browser to http://localhost:3000/puppet-show.
 
 ## API
-The URL parameter names for the web service end point __puppet-show/pdf__ and __puppet-show/screenshot__ mirror the option names for the puppeteer print-to-pdf function found [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions) and [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions).  The puppet-show web forms can also be used to explore the API.
+The URL parameter names for the web service end point __puppet-show/pdf__ and __puppet-show/screenshot__ mirror the option names for the puppeteer print-to-pdf and screenshot functions found [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions) and [here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions).  The puppet-show web forms can also be used to explore the API.
 
 **Note**: The default values match the puppeteer defaults and the only required parameter is "url".
 
