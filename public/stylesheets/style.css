@@ -158,3 +158,6 @@ button[type=submit] {
 #footerTemplate {
   width: 400px;
 }
+#clip-value input {
+    width: 75px;
+}

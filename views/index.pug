@@ -150,12 +150,28 @@ block content
             input#screenshot-quality(type='number' max='100' min='0' name='quality' placeholder='JPEG only')
         li
           div.li-key
+            span Clip
+          div.li-value#clip-value
+            input#clipX(type='text' name='clipX' placeholder='X')
+            input#clipY(type='text' name='clipY' placeholder='Y')
+            input#clipWidth(type='text' name='clipWidth' placeholder='Width')
+            input#clipHeight(type='text' name='clipHeight' placeholder='Height')
+        li
+          div.li-key
             span Mode
           div.li-value.radio-value
             label(for='screenshot-viewport') Viewport
             input#screenshot-viewport(type='radio' name='fullPage' value='false' checked='checked')
             label(for='screenshot-fullpage') Full Page
             input#screenshot-fullpage(type='radio' name='fullPage' value='true')
+        li
+          div.li-key
+            span Encoding
+          div.li-value.radio-value
+            label(for='screenshot-binary') Binary
+            input#screenshot-binary(type='radio' name='encoding' value='binary' checked='checked')
+            label(for='screenshot-base64') Base64
+            input#screenshot-base64(type='radio' name='encoding' value='base64')
         li
           div.li-key
             span Background
