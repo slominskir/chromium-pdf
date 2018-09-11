@@ -44,7 +44,7 @@ docker pull slominskir/puppet-show
 docker run --privileged -d --rm -p 3000:3000 slominskir/puppet-show
 # Navigate web browser to http://localhost:3000/puppet-show/
 ```
-**Note**: After I updated my version of Docker on Windows to 18.06.1-ce-win73 (19507) I now must add the __--privileged__ flag to the docker run command else chrome won't launch.
+**Note**: Without the __--privileged__ flag to the docker run command Chrome may not launch.
 
 ## See Also
    - [Puppet Show Wiki](https://github.com/slominskir/puppet-show/wiki)
