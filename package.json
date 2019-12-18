@@ -2,7 +2,7 @@
   "name": "puppet-show",
   "description": "Print-to-PDF and Screenshot web service",
   "homepage": "https://github.com/slominskir/puppet-show",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "author": "Ryan Slominski <ryans@jlab.org>",
   "main": "bin/www",
@@ -21,13 +21,13 @@
     "screenshot"
   ],
   "dependencies": {
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.4",
     "debug": "~3.1.0",
-    "express": "~4.16.3",
-    "http-errors": "~1.7.0",
-    "jquery": "~3.4.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "jquery": "^3.4.1",
     "morgan": "~1.9.0",
-    "pug": "~2.0.3",
-    "puppeteer": "~1.7.0"
+    "pug": "^2.0.4",
+    "puppeteer": "~2.0.0"
   }
 }
