@@ -161,3 +161,10 @@ button[type=submit] {
 .dimension-value input {
     width: 75px;
 }
+#footnote {
+    text-align: right;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 7px;
+    margin-right: 7px;
+}
